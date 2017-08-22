@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          testunit.txt
+
+*** Keywords ***
+runflow
+    [Arguments]    ${channeld}    ${dirction}    ${file}    ${subdir}    ${wh_dir}
+    Comment    1. setup system    2. run test    3. teardown system
+    Set Up Do
+    setting_Channel    ${channeld}
+    Sleep    3
+    @{list_p}    getMessage.Get Message
+    config_tcl    ${dirction}    ${file}    ${list_p[5]}    ${list_p[0]}    ${list_p[1]}    ${list_p[3]}
+    ...    ${list_p[4]}    ${wh_dir}
+    Execute Tcl    ${dirction}    ${file}
+    Write Date To Excel    ${dirction}    ${subdir}

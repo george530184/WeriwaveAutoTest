@@ -1,0 +1,27 @@
+*** Settings ***
+Resource          testflow.txt
+
+*** Test Cases ***
+2.2_chn36_tx
+    runflow    36    2.2    2.2_TX.tcl    CH36_TX    D:/Performance/2.2/CH36_TX
+
+2.2_chn36_rx
+    [Tags]
+    [Timeout]
+    runflow    36    2.2    2.2_RX.tcl    CH36_RX    D:/Performance/2.2/CH36_RX
+
+2.2_chn52_tx
+
+2.2_chn52_rx
+
+2.2_chn100_tx
+
+2.2_chn100_rx
+
+2.2_chn132_tx
+
+2.2_chn132_rx
+
+2.2_chn149_tx
+
+2.2_chn149_rx

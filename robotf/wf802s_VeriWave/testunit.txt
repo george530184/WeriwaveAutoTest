@@ -1,0 +1,18 @@
+*** Settings ***
+Library           ../../changeTclArgument.py
+Library           ../../executeTcl.py
+Library           ../../setupDo.py
+Library           ../../excelWrite.py
+Library           ../../Serials/configDevice.py
+Library           ../../Serials/getMessage.py
+
+*** Keywords ***
+setting_Channel
+    [Arguments]    ${channel}
+    Config Device    ${channel}
+
+config_tcl
+    [Arguments]    ${dirction}    ${file}    ${channel}    ${version}    ${apmode}    ${ssid}
+    ...    ${pwd}    ${dirs}
+    Change Tcl Argument    ${dirction}    ${file}    ${channel}    ${version}    ${apmode}    ${ssid}
+    ...    ${pwd}    ${dirs}
